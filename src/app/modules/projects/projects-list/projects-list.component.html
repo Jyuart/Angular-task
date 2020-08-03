@@ -1,0 +1,20 @@
+<h1 class="page-title">Projects List</h1>
+
+<mat-card *ngFor="let project of projects" class="item-card">
+  <mat-card-header>
+    <div mat-card-avatar class="id-logo">{{ project.id }}</div>
+    <mat-card-title>{{ project.name }}</mat-card-title>
+    <mat-card-subtitle>{{ project.createdAt | ukrDate}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{ project.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button [routerLink]="['/projects/update/', project.id]" color="primary">Edit</button>
+    <button mat-raised-button (click)="deleteProject(project.id)" color="warn">Delete</button>
+  </mat-card-actions>
+</mat-card>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,68 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm.value)" class="custom-form">
+
+<div>
+    <mat-form-field class="custom-field">
+        <mat-label for="id">
+            Id
+        </mat-label>
+        <input matInput id="id" type="number" formControlName="id">
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="custom-field">
+        <mat-label for="name">
+            Name
+        </mat-label>
+        <input matInput id="name" type="text" formControlName="name">
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="custom-field">
+        <mat-label for="description">
+            Description
+        </mat-label>
+        <textarea matInput id="description" type="text" formControlName="description"></textarea>
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="custom-field">
+        <mat-label for="deadline">
+            Deadline
+        </mat-label>
+        <input matInput id="deadline" type="date" formControlName="deadline">
+</mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="custom-field">
+        <mat-label for="createdAt">
+            Created
+        </mat-label>
+        <input matInput id="createdAt" type="date" formControlName="createdAt">
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="custom-field">
+        <mat-label for="authorId">
+            Author ID
+        </mat-label>
+        <input matInput id="authorId" type="number" formControlName="authorId">
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="custom-field">
+        <mat-label for="teamId">
+            Team ID
+        </mat-label>
+        <input matInput id="teamId" type="number" formControlName="teamId">
+    </mat-form-field>
+</div>
+
+<button mat-raised-button class="button" type="submit" color="primary">Submit</button>
+
+</form>

@@ -1,0 +1,22 @@
+<h1 class="page-title">Users List</h1>
+
+<mat-card *ngFor="let user of users" class="item-card">
+  <mat-card-header>
+    <div mat-card-avatar class="id-logo">{{ user.id }}</div>
+    <mat-card-title>{{ user.firstName }} {{ user.lastName }}</mat-card-title>
+    <mat-card-subtitle>{{ user.registeredAt | ukrDate}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+        <li>Birthday: {{ user.birthday | ukrDate }}</li>
+        <li>Email: {{ user.email }}</li>
+        <li *ngIf='user.teamId'>Team ID: {{ user.teamId }}</li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button [routerLink]="['/users/update/', user.id]" color="primary">Edit</button>
+    <button mat-raised-button (click)="deleteUser(user.id)" color="warn">Delete</button>
+  </mat-card-actions>
+</mat-card>
+
+<router-outlet></router-outlet>

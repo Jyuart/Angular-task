@@ -1,0 +1,32 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm.value)" class="custom-form">
+
+    <div>
+        <mat-form-field class="custom-field">
+            <mat-label for="id">
+                Id
+            </mat-label>
+            <input matInput id="id" type="number" formControlName="id">
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="custom-field">
+            <mat-label for="name">
+                Name
+            </mat-label>
+            <input matInput id="name" type="text" formControlName="name">
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="custom-field">
+            <mat-label for="createdAt">
+                Created
+            </mat-label>
+            <input matInput id="createdAt" type="date" formControlName="createdAt">
+        </mat-form-field>
+    </div>
+    
+    <button mat-raised-button class="button" type="submit" color="primary">Submit</button>
+    
+    </form>

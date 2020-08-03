@@ -1,0 +1,24 @@
+.created-task,
+.started-task,
+.finished-task,
+.canceled-task {
+    margin: 0, auto;
+    max-width: 800px;
+    margin-bottom: 10px;
+}
+
+.created-task {
+    background-color: rgba(217,217,217, 0.4);
+}
+
+.started-task {
+    background-color: rgba(56,101,163, 0.4);
+}
+
+.finished-task {
+    background-color: rgba(100,163,56, 0.4);
+}
+
+.canceled-task {
+    background-color: rgba(224,59,36, 0.4);
+}

@@ -1,0 +1,21 @@
+<h1 class="page-title">Tasks List</h1>
+
+<mat-card *ngFor="let task of tasks" [ngClass]="{'created-task': task.state === 0,
+'started-task': task.state === 1,
+'finished-task': task.state === 2,
+'canceled-task': task.state === 3}">
+  <mat-card-header>
+    <div mat-card-avatar class="id-logo">{{ task.id }}</div>
+    <mat-card-title>{{ task.name }} ({{ taskStates[task.state] }})</mat-card-title>
+    <mat-card-subtitle>{{ task.createdAt | ukrDate}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{ task.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button [routerLink]="['/tasks/update/', task.id]" color="primary">Edit</button>
+    <button mat-raised-button (click)="deleteTask(task.id)" color="warn">Delete</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,77 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm.value)" class="custom-form">
+
+    <div>
+        <mat-form-field class="custom-field">
+            <mat-label for="id">
+                Id
+            </mat-label>
+            <input matInput id="id" type="number" formControlName="id">
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="custom-field">
+            <mat-label for="name">
+                Name
+            </mat-label>
+            <input matInput id="name" type="text" formControlName="name">
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="custom-field">
+            <mat-label for="description">
+                Description
+            </mat-label>
+            <textarea matInput id="description" type="text" formControlName="description"></textarea>
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="custom-field">
+            <mat-label for="finishedAt">
+                Finished
+            </mat-label>
+            <input matInput id="finishedAt" type="date" formControlName="finishedAt">
+    </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="custom-field">
+            <mat-label for="createdAt">
+                Created
+            </mat-label>
+            <input matInput id="createdAt" type="date" formControlName="createdAt">
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="custom-field">
+            <mat-label for="performerId">
+                Performer ID
+            </mat-label>
+            <input matInput id="performerId" type="number" formControlName="performerId">
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="custom-field">
+            <mat-label for="projectId">
+                Project ID
+            </mat-label>
+            <input matInput id="projectId" type="number" formControlName="projectId">
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field class="custom-field">
+            <mat-label for="state">
+                State (1 - created, 2 - started, 3 - finished, 4 - canceled)
+            </mat-label>
+            <input matInput id="state" type="number" formControlName="state" min=0 max=3>
+        </mat-form-field>
+    </div>
+    
+    <button mat-raised-button class="button" type="submit" color="primary">Submit</button>
+    
+    </form>

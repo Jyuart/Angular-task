@@ -1,0 +1,15 @@
+<h1 class="page-title">Teams List</h1>
+
+<mat-card *ngFor="let team of teams" class="item-card">
+  <mat-card-header>
+    <div mat-card-avatar class="id-logo">{{ team.id }}</div>
+    <mat-card-title>{{ team.name }}</mat-card-title>
+    <mat-card-subtitle>{{ team.createdAt | ukrDate}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions align="end">
+    <button mat-raised-button [routerLink]="['/teams/update/', team.id]" color="primary">Edit</button>
+    <button mat-raised-button (click)="deleteTeam(team.id)" color="warn">Delete</button>
+  </mat-card-actions>
+</mat-card>
+
+<router-outlet></router-outlet>
